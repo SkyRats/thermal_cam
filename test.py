@@ -1,20 +1,7 @@
+import odroid_wiringpi as wiringpi
 
-#import board
-import digitalio
-import busio
- 
-print("Hello blinka!")
- 
-# Try to great a Digital input
-# pin = digitalio.DigitalInOut(board.D7)
-# print("Digital IO ok!")
- 
-# Try to create an I2C device
-# i2c = busio.I2C(board.SCL, board.SDA)
-# print("I2C ok!")
- 
-# Try to create an SPI device
-# spi = busio.SPI(board.SCLK, board.MOSI, board.MISO)
-# print("SPI ok!")
+wiringpi.wiringPiSetup() 
+wiringpi.wiringPiSetupSys() 
+wiringpi.wiringPiSetupGpio()
 
-print("done!")
+wiringpi.mcp23017Setup(1, "/dev/i2c-1")
